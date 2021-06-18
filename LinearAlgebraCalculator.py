@@ -10,13 +10,19 @@ def main():
       print("B.Scalar matrix multiplication")
       print("C.Matrix matrix multiplication")
       print("D.Matrix transpose")
+      print("E.Matrix addition")
+      print("F.Matrix subtraction")
+      print("G.Matrix inversion")
+      print("H.Matrix determinant")
   
       choice = input("")
       choice = choice.upper()
-  
+    
+      #Gauss jordan elimination------------------------------------------------------------------------------------------------
       if (choice == "A"):
           print("lorem ipsum")
     
+      #scalar matrix multipliation---------------------------------------------------------------------------------------------
       if (choice == "B"):
            #Input rows and columns
            Rows = int(input("Enter the number of rows:"))
@@ -48,7 +54,7 @@ def main():
               print()
            print("Your new matrix in array form is{}:".format(x))
        
-
+      #Matrix on matrix multiplication-----------------------------------------------------------------------------------------
       if (choice == "C"):
           #check for validity and do the bulk of this part
                
@@ -95,7 +101,8 @@ def main():
                    print("matrix x in array mode is:\n{}".format(x))
                    print("matrix x has {} rows and {} columns".format(Row1,Column2))
                    print("")
-
+    
+      #Matrix transpose calculator----------------------------------------------------------------------------------------------
       if (choice == "D"):
            #input the matrix
            Rows = int(input("Enter the number of rows:"))
@@ -121,7 +128,71 @@ def main():
            print("matrix in array mode is:\n{}".format(transpose))
            print("matrix x has {} rows and {} columns".format(Columns,Rows))
 
+      #Matrix addition----------------------------------------------------------------------------------------------------------
+      if (choice == "E"):
+        #Input rows and columns for matrix 1
+        Row1 = int(input("Enter the number of rows:"))
+        Column1 = int(input("Enter the number of columns:"))
+        Matrix1 = InputMatrix(Row1,Column1)
 
+        #Input rows and columns for matrix 2
+        Row2= int(input("Enter the number of rows:"))
+        Column2 = int(input("Enter the number of columns:"))
+        Matrix2 = InputMatrix(Row2,Column2)
+
+        #check to see that theyre the same size
+        if(Row1 != Row2):
+            print("error, matrices must have the same number of rows")
+        elif(Column1 != Column2):
+            print("error, matrices must have the same number of columns")
+
+        elif (Row1 != Row2 and Column1 != Column2):
+            print("error, matrices must have the same size, i;e same number of rows and columns")
+        else:
+            x = Addition(Matrix1,Matrix2,Row1,Column1)
+            print("your new matrix is:\n")
+            for i in range(Row1):
+               for j in range(Column1):
+                    print(x[i][j], end = " ")
+               print()
+            print("matrix in array mode is:\n{}".format(x))
+        
+      #Matrix subtraction-------------------------------------------------------------------------------------------------------
+      if (choice == "F"):
+        #Input rows and columns for matrix 1
+        Row1 = int(input("Enter the number of rows:"))
+        Column1 = int(input("Enter the number of columns:"))
+        Matrix1 = InputMatrix(Row1,Column1)
+
+        #Input rows and columns for matrix 2
+        Row2= int(input("Enter the number of rows:"))
+        Column2 = int(input("Enter the number of columns:"))
+        Matrix2 = InputMatrix(Row2,Column2)
+
+        #check to see that theyre the same size
+        if(Row1 != Row2):
+            print("error, matrices must have the same number of rows")
+        elif(Column1 != Column2):
+            print("error, matrices must have the same number of columns")
+
+        elif (Row1 != Row2 and Column1 != Column2):
+            print("error, matrices must have the same size, i;e same number of rows and columns")
+        else:
+            x = Subtraction(Matrix1,Matrix2,Row1,Column1)
+            print("your new matrix is:\n")
+            for i in range(Row1):
+               for j in range(Column1):
+                    print(x[i][j], end = " ")
+               print()
+            print("matrix in array mode is:\n{}".format(x))
+            
+      #Matrix inversion----------------------------------------------------------------------------------------------------------
+      if (choice == "G"):
+          print("lorem ipsum")
+      
+      #Matrix determinant--------------------------------------------------------------------------------------------------------
+      if(choice == "H"):
+          print("lorem ipsum")
 
       else:
           print("{} is not a valid input, please select one of the following options by typing the corresponding letter".format(choice))
