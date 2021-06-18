@@ -56,3 +56,41 @@ def Transpose(matrix,row,column):
             matrixNew[j][i] = matrix[i][j]
 
     return matrixNew
+
+def Addition(matrix1,matrix2,row,column):
+    matrixNew = []
+    for i in range(row):
+        a=[]
+        for j in range(column):
+            a.append(0)
+        matrixNew.append(a)
+
+    for i in range(row):
+        for j in range (column):
+            matrixNew[i][j] = matrix1[i][j] + matrix2[i][j]
+
+    return matrixNew
+
+def Subtraction(matrix1,matrix2,row,column):
+    matrixNew = []
+    for i in range(row):
+        a=[]
+        for j in range(column):
+            a.append(0)
+        matrixNew.append(a)
+
+    for i in range(row):
+        for j in range (column):
+            matrixNew[i][j] = matrix1[i][j] - matrix2[i][j]
+
+    return matrixNew
+
+#To be made
+def MatrixInverse():
+
+    return
+
+#To be made
+def MatrixDeterminant():
+
+    return
