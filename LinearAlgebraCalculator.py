@@ -1,3 +1,5 @@
+import numpy as np
+import sys
 from functions import *
 
 def main():
@@ -20,10 +22,11 @@ def main():
     
       #Gauss jordan elimination------------------------------------------------------------------------------------------------
       if (choice == "A"):
-          print("lorem ipsum")
-    
+          x = int(input("enter the number of unknowns here:"))
+          y = GaussJordan(x)
+
       #scalar matrix multipliation---------------------------------------------------------------------------------------------
-      if (choice == "B"):
+      elif (choice == "B"):
            #Input rows and columns
            Rows = int(input("Enter the number of rows:"))
            Columns = int(input("Enter the number of columns:"))
@@ -55,7 +58,7 @@ def main():
            print("Your new matrix in array form is{}:".format(x))
        
       #Matrix on matrix multiplication-----------------------------------------------------------------------------------------
-      if (choice == "C"):
+      elif (choice == "C"):
           #check for validity and do the bulk of this part
                
                #Input rows and columns for matrix 1
@@ -103,7 +106,7 @@ def main():
                    print("")
     
       #Matrix transpose calculator----------------------------------------------------------------------------------------------
-      if (choice == "D"):
+      elif (choice == "D"):
            #input the matrix
            Rows = int(input("Enter the number of rows:"))
            Columns = int(input("Enter the number of columns:"))
@@ -129,7 +132,7 @@ def main():
            print("matrix x has {} rows and {} columns".format(Columns,Rows))
 
       #Matrix addition----------------------------------------------------------------------------------------------------------
-      if (choice == "E"):
+      elif (choice == "E"):
         #Input rows and columns for matrix 1
         Row1 = int(input("Enter the number of rows:"))
         Column1 = int(input("Enter the number of columns:"))
@@ -158,7 +161,7 @@ def main():
             print("matrix in array mode is:\n{}".format(x))
         
       #Matrix subtraction-------------------------------------------------------------------------------------------------------
-      if (choice == "F"):
+      elif (choice == "F"):
         #Input rows and columns for matrix 1
         Row1 = int(input("Enter the number of rows:"))
         Column1 = int(input("Enter the number of columns:"))
@@ -187,17 +190,19 @@ def main():
             print("matrix in array mode is:\n{}".format(x))
             
       #Matrix inversion----------------------------------------------------------------------------------------------------------
-      if (choice == "G"):
+      elif (choice == "G"):
           print("lorem ipsum")
       
       #Matrix determinant--------------------------------------------------------------------------------------------------------
-      if(choice == "H"):
+      elif(choice == "H"):
           print("lorem ipsum")
-
-      else:
-          print("{} is not a valid input, please select one of the following options by typing the corresponding letter".format(choice))
       
-      keepUsing = input("Would you like to keep going Y/N:")
+      #If input is invalid-------------------------------------------------------------------------------------------------------
+      else:
+          print("{} is not a valid option".format(choice))
+      
+      #Ask to continue using or not-----------------------------------------------------------------------------------------------  
+      keepUsing = input("\nWould you like to keep going Y/N:")
       keepUsing = keepUsing.upper()
      
   print("Thank you for using!")  
